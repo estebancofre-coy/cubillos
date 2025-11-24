@@ -527,13 +527,22 @@
         padding: 1.1rem 1.15rem;
       }
     }
-    .hero-visual-img {
+/* ===== IMAGEN EN HERO VISUAL ===== */
+
+.hero-visual-img-container {
   width: 100%;
-  border-radius: 1rem;
+  height: 240px;
   margin-bottom: 1.2rem;
+  border-radius: 1rem;
+  overflow: hidden;
   box-shadow: var(--shadow-suave);
+}
+
+.hero-visual-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
   object-fit: cover;
-  max-height: 240px;
 }
   </style>
 </head>
@@ -600,9 +609,13 @@
 
       <aside class="hero-visual" aria-hidden="true">
         <span class="hero-visual-tag">Patagonia · Universidad Pública</span>
-        <img src="https://drive.google.com/uc?export=view&id=1V04zptjmN0NnN4GRf_vbMR0kMtOl5B8Z"
-     alt="Programa UAysén 2026–2030"
-     class="hero-visual-img">
+     <div class="hero-visual-img-container">
+  <iframe 
+    src="https://drive.google.com/file/d/1V04zptjmN0NnN4GRf_vbMR0kMtOl5B8Z/preview"
+    allow="autoplay"
+    class="hero-visual-iframe">
+  </iframe>
+</div>
         <div class="hero-visual-main">
           <div class="hero-visual-title">
             La Universidad como eje de conocimiento y desarrollo para la Región de Aysén.
