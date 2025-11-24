@@ -23,6 +23,47 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      /* ===== ACORDEÓN PARA LA SECCIÓN DE EJES ===== */
+
+#ejes .panel {
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+  position: relative;
+}
+
+#ejes .panel-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.30s ease-out;
+}
+
+/* Panel abierto */
+#ejes .panel.active .panel-body {
+  max-height: 800px;
+  margin-top: 0.6rem;
+}
+
+/* Chevron ▼ */
+#ejes .panel-header {
+  position: relative;
+  padding-right: 1.8rem;
+}
+
+#ejes .panel-header::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1rem;
+  color: var(--color-secundario);
+  transition: transform 0.25s ease;
+}
+
+#ejes .panel.active .panel-header::after {
+  transform: rotate(180deg);
+}
+
     }
 
     body {
@@ -868,5 +909,30 @@
       </div>
     </div>
   </footer>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const panels = document.querySelectorAll("#ejes .panel");
+
+  panels.forEach(panel => {
+    const header = panel.querySelector(".panel-header");
+
+    header.addEventListener("click", () => {
+
+      // Cierra todos los paneles excepto el clicado
+      panels.forEach(p => {
+        if (p !== panel) p.classList.remove("active");
+      });
+
+      // Alterna el panel clicado
+      panel.classList.toggle("active");
+    });
+  });
+
+  // Abre el primer eje por defecto
+  if (panels.length > 0) {
+    panels[0].classList.add("active");
+  }
+});
+</script>
 </body>
 </html>
