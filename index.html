@@ -504,6 +504,30 @@
       color: #374151;
     }
 
+    /* Estilos para la sección de prensa */
+    .grid-prensa {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .video-wrapper {
+      background: var(--color-panel);
+      border-radius: 1.1rem;
+      padding: 0.5rem;
+      box-shadow: var(--shadow-suave);
+      border: 1px solid rgba(15, 23, 42, 0.04);
+      overflow: hidden;
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: auto;
+      min-height: 380px;
+      border-radius: 0.75rem;
+    }
+
     @media (max-width: 840px) {
       .hero {
         grid-template-columns: minmax(0, 1fr);
@@ -513,6 +537,9 @@
       }
       .nav-links {
         display: none;
+      }
+      .grid-prensa {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
 
@@ -525,6 +552,9 @@
       }
       .panel {
         padding: 1.1rem 1.15rem;
+      }
+      .video-wrapper iframe {
+        min-height: 320px;
       }
     }
 /* ===== IMAGEN EN HERO VISUAL ===== */
@@ -580,6 +610,7 @@
         <a href="#vision">Visión</a>
         <a href="#ejes">Ejes estratégicos</a>
         <a href="#patagonia">Sello Patagonia</a>
+        <a href="#prensa">Prensa</a>
       </nav>
       <a href="#programa-completo" class="nav-cta">
         <span class="icon">▾</span>
@@ -904,6 +935,32 @@
         cooperación internacional y formación profesional, contribuyendo al mismo tiempo al desarrollo humano, 
         social y productivo de la región.
       </p>
+    </section>
+
+    <!-- APARICIONES EN PRENSA -->
+    <section id="prensa" aria-labelledby="prensa-titulo">
+      <div class="section-label">Medios y difusión</div>
+      <div class="section-header">
+        <h2 id="prensa-titulo">Apariciones en Prensa</h2>
+        <p>
+          Intervenciones y entrevistas del candidato en medios de comunicación regional, 
+          donde se exponen las propuestas y la visión para la Universidad de Aysén.
+        </p>
+      </div>
+
+      <div class="grid-prensa">
+        <div class="video-wrapper">
+          <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FArcoirisFM%2Fvideos%2F2068161707054263%2F&show_text=true&width=560&t=0" width="560" height="429" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" loading="lazy"></iframe>
+        </div>
+        
+        <div class="video-wrapper">
+          <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fradiosantamaria.cl%2Fvideos%2F25681171988132786%2F&show_text=true&width=560&t=0" width="560" height="429" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" loading="lazy"></iframe>
+        </div>
+        
+        <div class="video-wrapper">
+          <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FRadioGenialFM%2Fvideos%2F790265613973136%2F&show_text=true&width=560&t=0" width="560" height="429" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" loading="lazy"></iframe>
+        </div>
+      </div>
     </section>
 
     <!-- PROGRAMA COMPLETO -->
